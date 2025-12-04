@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safahomes AI Interior Designer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Safahomes AI Designer</h1>
+            <p>Generate your dream home interiors & exteriors</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="promptInput" placeholder="Describe your dream design... 
+(e.g., Modern minimalist living room with wooden accents, large windows, cozy lighting)"></textarea>
+                <button id="generateBtn">Generate Design ✨</button>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Creating your perfect home...</p>
+            </div>
+
+            <div id="resultSection" class="result-section hidden">
+                <img id="generatedImage" alt="Generated Design">
+                <p class="prompt-display" id="currentPrompt"></p>
+            </div>
+        </main>
+
+        <aside class="history-section">
+            <h3>Recent Designs</h3>
+            <div id="historyList"></div>
+        </aside>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
